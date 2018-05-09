@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>FFBOX -- Music Life</title>
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.transitions.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/Logo57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/Logo144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/Logo114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/Logo72.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/Logo57.png">
+    <script>
+        function Coming() {
+            var t;
+            t = prompt("請輸入您的E-MAil", "");
+            emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+
+            if (t.search(emailRule) != -1) {
+                alert("恭喜您訂閱成功～");
+            } else {
+                alert("您輸入的E-MAIL不正確O");
+            }
+        }
+        function change(image) {
+            document.getElementById("pho").src = image;
+        }
+    </script>
+</head>
+<!--/head-->
+
+<body id="home" class="homepage">
+
+    <header id="header">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/Logo2.png" alt="logo"></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="#home">首頁</a></li>
+                        <li class="scroll"><a href="#features">金曲排行</a></li>
+                        <!--<li class="scroll"><a href="#services">Service</a></li>-->
+                        <li class="scroll"><a href="#portfolio">分類</a></li>
+                        <!--<li class="scroll"><a href="#about">About Us</a></li>-->
+                        <li class="scroll"><a href="#meet-team">歌手簡介</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.container-->
+        </nav>
+        <!--/nav-->
+    </header>
+    <!--/header-->
+
+    <section id="main-slider">
+        <div class="owl-carousel">
+            <div class="item" style="background-image: url(images/slider/bg3.jpg);">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2> J.J.Lin<br><span>偉大的渺小</span></h2>
+                                    <p> 回家的路&nbsp&nbsp 很長&nbsp&nbsp 很難 <br>離開自己&nbsp&nbsp 再被自己找到</p>
+                                    <a class="btn btn-primary btn-lg" href="https://www.youtube.com/watch?v=JwjBbWQs71k">馬上聽</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.item-->
+            <div class="item" style="background-image: url(images/slider/bg4.jpg);">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2>a MEI<br> <span>連名帶姓</span></h2>
+                                    <p>我偷走你的故事<br>唱成一首歌，再還給你</p>
+                                    <a class="btn btn-primary btn-lg" href="https://www.youtube.com/watch?v=qf09H2xFq2s">馬上聽</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.item-->
+        </div>
+        <!--/.owl-carousel-->
+    </section>
+    <!--/#main-slider-->
+
+    <section id="cta" class="wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h2>使用FFBOX讓您可以跟上潮流獲得最新的音樂資訊</h2>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <a class="btn btn-primary btn-lg" onclick="Coming()">訂閱通知</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#cta-->
+
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">金曲排行</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                    <img class="img-responsive" id="pho" style="height: 400px;padding-top: 100px"src="images/r1.jpeg" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="media service-box wow fadeInRight" id="rank1">
+                        <div class="pull-left">
+                            <i class="fa-stack" ><strong>1</strong></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">漂向北方</h4>
+                            <p>黃明志.王力宏</p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight" id="rank2">
+                        <div class="pull-left">
+                            <i class="fa-stack"><strong>2</strong></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">我們不一樣</h4>
+                            <p>大壯</p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight" id="rank3">
+                        <div class="pull-left">
+                            <i class="fa-stack"><strong>3</strong></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">演員</h4>
+                            <p>薛之謙</p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight" id="rank4">
+                        <div class="pull-left">
+                            <i class="fa-stack"><strong>4</strong></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">告白氣球</h4>
+                            <p>周杰倫</p>
+                        </div>
+                    </div>
+                    <div class="media service-box wow fadeInRight" id="rank5">
+                        <div class="pull-left">
+                            <i class="fa-stack"><strong>5</strong></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">剛好遇見你</h4>
+                            <p>李玉剛</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta2">
+        <a href="https://www.youtube.com/watch?v=bpJko9n8KTY">
+        <div class="container" style="height: 300px">
+            <div class="text-center">
+                <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms" style="font-size: 100px;text-align:right;line-height: 1.3"><br>本週推薦</h2>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms"></p>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"></p>
+            </div>
+        </div>
+        </a>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown" style="font-size: 60px">分類</h2>
+            </div>
+
+            <div class="text-center">
+                <ul class="portfolio-filter">
+                    <li><a class="active" href="#" data-filter="*">全部</a></li>
+                    <li><a href="#" data-filter=".filter1">搖滾</a></li>
+                    <li><a href="#" data-filter=".filter2">抒情</a></li>
+                    <li><a href="#" data-filter=".filter3">情歌</a></li>
+                    <li><a href="#" data-filter=".filter4">男歌手</a></li>
+                    <li><a href="#" data-filter=".filter5">女歌手</a></li>
+                    <li><a href="#" data-filter=".filter6">團體</a></li>
+                </ul>
+                <!--/#portfolio-filter-->
+            </div>
+
+            <div class="portfolio-items">
+                <div class="portfolio-item filter1 filter6">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/f1.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>派對動物</h3>
+                            五月天
+                            <a class="preview" href="https://www.youtube.com/watch?v=Fn7NLWHJw4s" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.portfolio-item-->
+
+                <div class="portfolio-item filter2 filter4">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/f2.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>魚仔</h3>
+                            盧廣仲
+                            <a class="preview" href="https://www.youtube.com/watch?v=ybfWYpYhTQQ" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.portfolio-item-->
+
+                <div class="portfolio-item filter1 filter4">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/f3.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>帥到分手</h3>
+                            周湯豪
+                            <a class="preview" href="https://www.youtube.com/watch?v=29tEEaTN_Sc" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.portfolio-item-->
+
+                <div class="portfolio-item filter3 filter4">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/f4.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>你，好不好</h3>
+                            周興哲
+                            <a class="preview" href="https://www.youtube.com/watch?v=wSBXfzgqHtE" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.portfolio-item-->
+
+                <div class="portfolio-item filter2 filter5">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/f5.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>光年之外</h3>
+                            鄧紫棋
+                            <a class="preview" href="https://www.youtube.com/watch?v=T4SimnaiktU" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.portfolio-item-->
+
+                <div class="portfolio-item filter3 filter5">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/f6.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>小幸運</h3>
+                            田馥甄
+                            <a class="preview" href="https://www.youtube.com/watch?v=GCgvpwLNvtY" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.portfolio-item-->
+
+                <div class="portfolio-item filter1 filter6">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/f7.jpeg" alt="">
+                        <div class="portfolio-info">
+                            <h3>OH MY GOD</h3>
+                            玖壹壹
+                            <a class="preview" href="https://www.youtube.com/watch?v=12Xh5pK_zQ0" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.portfolio-item-->
+
+                <div class="portfolio-item filter2">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/f8.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>家家酒</h3>
+                            家家
+                            <a class="preview" href="https://www.youtube.com/watch?v=T-Xk_xirUlo" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.portfolio-item-->
+            </div>
+        </div>
+        <!--/.container-->
+    </section>
+    <!--/#portfolio-->
+
+    <section id="meet-team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown" style="font-size: 60px">歌手簡介</h2>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="team-img">
+                            <img class="img-responsive img-circle" src="images/m1.JPG" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>林俊傑</h3>
+                            <span>JJ</span>
+                        </div>
+                        
+                        <ul class="social-icons">
+                            <li><a href="https://zh-tw.facebook.com/JJLin/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/jj_lin"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="team-img">
+                            <img class="img-responsive img-circle" src="images/m2.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>五月天</h3>
+                            <span>MayDay</span>
+                        </div>
+                        
+                        <ul class="social-icons">
+                            <li><a href="https://www.facebook.com/imayday555/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/mayday_en"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="team-img">
+                            <img class="img-responsive img-circle" src="images/m3.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>田馥甄</h3>
+                            <span>Hebe</span>
+                        </div>
+                        
+                        <ul class="social-icons">
+                            <li><a href="https://zh-tw.facebook.com/himhebe/"><i class="fa fa-facebook"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="team-img">
+                            <img class="img-responsive img-circle" src="images/m4.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>林宥嘉</h3>
+                            <span>Yoga</span>
+                        </div>
+                        
+                        <ul class="social-icons">
+                            <li><a href="https://zh-tw.facebook.com/yogalinmusic/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/yogalinofficial"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#meet-team-->
+    
+    <!--/#bottom-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    Contact Me : random@gmail.com
+                </div>
+                <div class="col-sm-6">
+                    <ul class="social-icons">
+                        <li><a href="https://zh-tw.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/?lang=zh-tw"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://plus.google.com/discover"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="https://www.flickr.com/"><i class="fa fa-flickr"></i></a></li>
+                        <li><a href="https://www.youtube.com/?gl=TW&hl=zh-tw"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/mousescroll.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/jquery.inview.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $('#rank1').click(function(){
+            change('images/r1.jpeg');
+        });
+        $('#rank2').click(function(){
+            change('images/r2.jpg');
+        });
+        $('#rank3').click(function(){
+            change('images/r3.jpg');
+        });
+        $('#rank4').click(function(){
+            change('images/r4.jpg');
+        });
+        $('#rank5').click(function(){
+            change('images/r5.jpg');
+        });
+    </script>
+</body>
+</html>

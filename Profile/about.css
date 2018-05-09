@@ -1,0 +1,47 @@
+ .profile {
+     margin-top: 85px;
+     position: absolute;
+     font-family: 'Montserrat', sans-serif;
+     width: 80%;
+     text-align: center;
+     margin-left: 10%;
+     margin-right: 10%;
+     font-size: 18px;
+     line-height: 28px;
+ }
+
+ .about {
+     max-width: 800px;
+     margin: auto;
+
+ }
+
+ h1 {
+     font-size: 50px;
+     text-align: center;
+     text-decoration: overline underline;
+ }
+
+ #selfie {
+     float: right;
+     padding: 2.5% 2.5%;
+ }
+
+ y {
+     font-size: 27px;
+     line-height: 40px;
+ }
+img {
+}
+
+ @media (max-width:940px) {
+     #selfie {
+         float: none;
+         width: 95%;
+         height: auto;
+     }
+     y {
+         font-size: 22px;
+         line-height: 40px;
+     }
+ }

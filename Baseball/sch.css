@@ -1,0 +1,28 @@
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: fixed; 
+}
+table, tr, td {
+    border: 1px solid black;
+    background-color: ghostwhite;
+}
+.day {
+    border: 0px;
+    font-size: 20px;
+    background-color: gainsboro;
+}
+.notdata {
+    color: gray
+}
+.data {
+    font-weight: 500;
+}
+.game {
+    padding: 10px;
+}
+.lagame {
+    color: red;
+    font-size: 20px
+}

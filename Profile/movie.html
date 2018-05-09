@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>T.C.Kuo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="movie.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <script type="text/javascript" src="myscript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".intro1").fadeIn(2000);
+            $(".intro2").fadeIn(5000);
+            $(".more").fadeIn(7000);
+            $("#menuTag").on('click', function() {
+                $("nav").toggleClass("menu-show");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="titleLogo">
+            <a href="index.html"><img src="source/Logo(land).png" alt="Smiley face" height="75" width="180"></a>
+        </div>
+        <nav class="choose">
+            <ui class="menu">
+                <a href="about.html">
+                    <li>ABOUT ME</li>
+                </a>
+                <a href="design.html">
+                    <li>MY DESIGN</li>
+                </a>
+                <a href="pet.html">
+                    <li>MY PET</li>
+                </a>
+                <a href="movie.html">
+                    <li>MY MOVIE</li>
+                </a>
+            </ui>
+            <a id="menuTag">MENU</a>
+        </nav>
+    </div>
+    <div class="bgm">
+        <div class="ti">
+        <h1 >MY MOVIE</h1>
+    </div>
+    
+    <div class="movie">
+        <div class="lo">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/O61d0Xcm7e0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    </div>
+    
+
+</body>
+
+</html>

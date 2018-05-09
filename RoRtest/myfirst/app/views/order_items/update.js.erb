@@ -1,0 +1,11 @@
+$(".cart").html("<%= escape_javascript(render 'layouts/cart') %>");
+  // Initialize tooltip component
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
+  // Initialize popover component
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+$(".cart_item").html("<%= escape_javascript(render  'carts/cart_item') %>");

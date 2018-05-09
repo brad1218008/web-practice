@@ -1,0 +1,316 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.header {
+    height: 220px;
+    background-color: saddlebrown;
+    width: 100%;
+    background-image: url(source/14Z36225KTP-32520.png);
+    background-repeat: no-repeat;
+    background-size: 42% auto;
+}
+.header h1 {
+    margin: 0;
+    padding: 45px;
+    font-size: 110px;
+    font-family: monospace;
+    text-align: right;
+    margin-right: 5%;
+}
+.connect li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.connect li a {
+    
+    font-size: 30px;
+    color: dimgray;
+    text-decoration: none;
+    font-weight: 800;
+    background-color: lightgray;
+    border-radius: 7px;
+    padding: 0px 15px;
+}
+.connect li a:hover {
+    color: coral;
+}
+.dis {
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+    text-align: ceter;
+    background-color: white;
+    font-size:25px;
+    font-style: italic;
+}
+
+.food {
+    height: 1100px;
+    background-size: cover;
+    width: 100%;
+    box-shadow: 0 0 70px 10px rgba(255,255,255,0.5) inset;
+}
+h1 {
+    color: black;
+    font-size: 60px;
+    margin: 0;
+    text-align: left;
+    margin-left: 100px
+}
+.dessert {
+    height: 650px;
+    background-color: white;
+    width: 100%;
+}
+.footer {
+    height: 160px;
+    background-color: saddlebrown;
+    width: 100%;
+}
+.footer img {
+    height: 40px;
+    width: 40px;
+}
+.allcard {
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.shadow {
+    margin-left: 15px;
+    margin-right: 15px;
+    width:290px;
+    background-color:#FFF;
+    box-shadow:0 10px 10px 0 rgba(0,0,0,0.4);
+    margin-bottom:25px; 
+    border-radius:25px; 
+    -moz-border-radius:25px;
+    display: inline-block;
+    height: 400px;
+    border-style:solid
+}
+img {
+    
+    border-radius:25px 25px 0px 0px;
+    -moz-border-radius:25px 25px 0px 0px;
+    width: 100%;
+    height: 250px;   
+}
+.container {
+    text-align:center;
+    padding-bottom:10px;
+    background-color: antiquewhite;
+    border-radius:0 0 25px 25px;
+    height: 135px;
+}
+.container h2 {
+    padding: 10px;
+    font-size: 35px;
+    margin: 0;
+}
+.container h3 {
+    font-size: 28px;
+    margin: 0;
+    color: red;
+}
+.space {
+    width: 90%;
+}
+.ft {
+    margin: 0;
+}
+.video {
+    position: relative;
+    width: 100%
+    height: 0;
+    padding-bottom: 50%;
+    margin-top: 50px;
+}
+iframe {
+    width: 80%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 10%;
+    
+}
+.booking {
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+}
+.imfortitle{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 60px;
+}
+.booking .imfor {
+    width: 35%;
+    height: 70%;
+    float: left;
+    text-align: left;
+    padding-left: 15%;
+    font-size: 23px;
+    line-height: 60px;
+}
+.inp {
+    height: 30px;
+    font-size: 23px;
+    width: 200px;
+}
+.booking .purchase {
+    width: 50%;
+    float: right;
+    text-align: left;
+}
+.booking .goods {
+    font-size: 23px;
+    margin: 8px 0;
+    width: 250px;
+}
+.inpnum {
+    font-size: 23px;
+    width: 40px;
+    text-align: center;
+}
+.sub {
+    width: 100%;
+    margin-bottom: 50px;
+}
+.sub button {
+    width: 200px;
+    font-size: 30px;
+    margin-left: 40%;
+}
+.sub button:hover {
+    width: 200px;
+    font-size: 30px;
+    margin-left: 40%;
+    color: coral;
+}
+.contact h4 {
+    text-align: left;
+    margin-left: 13%;
+    margin-right: 13%;
+    font-size: 22px;
+    line-height: 45px;
+    margin-bottom: 0px;
+}
+.contact h3 {
+    margin-left: 13%;
+    margin-right: 13%;
+    text-align: left;
+    line-height: 35px;
+    margin-top: 0px;
+}
+.contact img {
+    width: 70%;
+    height: auto;
+    margin-bottom: 50px;
+}
+@media (max-width: 1446px) {
+    .header h1 {
+        font-size: 95px;
+    }
+}
+@media (max-width: 1200px) {
+    .header h1 {
+        font-size: 80px;
+    }
+}
+@media (max-width: 1000px) {
+    .header {
+        height: 150px;
+    }
+    .header h1 {
+        font-size: 60px;
+    }
+    .connect li {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .connect li a{
+        font-size: 20px;
+    }
+}
+@media (max-width: 750px) {
+    .header {
+        height: 120px;
+    }
+    .header h1 {
+        font-size: 45px;
+    }
+}
+@media (max-width: 580px) {
+    .header {
+        height: 90px;
+    }
+    .header h1 {
+        font-size: 35px;
+        padding: 25px
+    }
+    .connect li {
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-bottom: 10px;
+    }
+    .connect li a{
+        font-size: 18px;
+        padding: 5px;
+    }
+
+}
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 30px;
+        padding: 25px
+    }   
+}
+@media (max-width: 1098px) {
+    .food {
+        height: 1500px;
+    }
+    .dessert {
+        height: 1050px;
+    }
+    .stu h1 {
+        font-size: 50px;
+        text-align: center;
+        margin: 0
+    }
+}
+@media (max-width: 730px) {
+    .food {
+        height: 2800px;
+    }
+    .dessert {
+        height: 1450px;
+    }
+    .stu h1 {
+        font-size: 40px;
+        text-align: center;
+        margin: 0
+    }
+}
+@media  (max-width: 900px) {
+    .booking .imfor {
+        width: 100%;
+        padding-left: 0%;
+        text-align: center;
+    }
+    .booking .purchase {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .sub button {
+        margin-left: 0%;
+    }
+    .sub button:hover {
+        margin-left: 0%;
+    }
+}

@@ -1,0 +1,14 @@
+<% if @order.errors.any? || @order_item.errors.any?%>
+  alert("Invalid");
+<% else %>
+  $(".cart").html("<%= escape_javascript(render 'layouts/cart') %>");
+  // Initialize tooltip component
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
+  // Initialize popover component
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+<% end %>

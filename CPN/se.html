@@ -1,0 +1,179 @@
+<html>
+
+<head>
+    <title>hi</title>
+</head>
+
+<body>
+    <h2 id="ih"></h2>
+    <h2 id="ho"></h2>
+    <h2 id="ans"></h2>
+    <h2 id="test"></h2>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function round(n) {
+            return Math.floor(n * 10000) / 10000;
+        }
+
+        function CPN(i_t, h_t, o_t, r1, r2) {
+            this.input_t = i_t;
+            this.hidden_t = h_t;
+            this.output_t = o_t;
+            console.log(this.input_t);
+            this.ih_w = new Array(this.input_t);
+            for (var i = 0; i < this.input_t; i++)
+                this.ih_w[i] = new Array(this.hidden_t);
+
+            this.ho_w = new Array(this.hidden_t);
+            for (var i = 0; i < this.hidden_t; i++)
+                this.ho_w[i] = new Array(this.output_t);
+            this.rateh = ((r1 === undefined) ? 0.5 : r1);
+            this.rateo = ((r2 === undefined) ? 0.5 : r2);
+        };
+
+        Object.assign(CPN.prototype, {
+
+            show: function() {
+                $("ih").innerHTML = "";
+                $("ho").innerHTML = "";
+
+                for (var i = 0; i < this.ih_w.length; i++) {
+                    for (var j = 0; j < this.ih_w[i].length; j++)
+                        $("ih").innerHTML += round(this.ih_w[i][j]) + " ";
+                    $("ih").innerHTML += "<br>";
+                }
+
+
+                for (var i = 0; i < this.ho_w.length; i++) {
+                    for (var j = 0; j < this.ho_w[i].length; j++)
+                        $("ho").innerHTML += round(this.ho_w[i][j]) + " ";
+                    $("ho").innerHTML += "<br>";
+                }
+            },
+
+            // random weight 0~100
+            random_w: function() {
+
+                for (var i = 0; i < this.ih_w.length; i++) {
+                    for (var j = 0; j < this.ih_w[i].length; j++)
+                        this.ih_w[i][j] = Math.floor(Math.random() * 101);
+                }
+
+
+                for (var i = 0; i < this.hidden_t; i++) {
+                    var RMS = 0;
+                    for (var j = 0; j < this.input_t; j++)
+                        RMS += this.ih_w[j][i] * this.ih_w[j][i];
+                    RMS = Math.sqrt(RMS);
+                    for (var j = 0; j < this.input_t; j++)
+                        this.ih_w[j][i] /= RMS;
+                }
+
+                for (var i = 0; i < this.ho_w.length; i++)
+                    for (var j = 0; j < this.ho_w[i].length; j++)
+                        this.ho_w[i][j] = Math.floor(Math.random() * 11);
+                this.show();
+
+            },
+
+            // input data 1d array: arr[input_t]
+            // target data 1d array: arr[output_t]
+            run: function(in_data, tar_data) {
+                //first layer
+                var tmp_w = new Array(this.input_t);
+                for (var i = 0; i < this.input_t; i++)
+                    tmp_w[i] = new Array(this.hidden_t);
+                for (var i = 0; i < tmp_w.length; i++)
+                    for (var j = 0; j < tmp_w[i].length; j++)
+                        tmp_w[i][j] = this.ih_w[i][j];
+                for (var i = 0; i < tmp_w.length; i++)
+                    for (var j = 0; j < tmp_w[i].length; j++)
+                        tmp_w[i][j] *= in_data[i];
+
+                var li = new Array(this.hidden_t);
+                for (var i = 0; i < li.length; i++)
+                    li[i] = tmp_w[0][i] + tmp_w[1][i] + tmp_w[2][i];
+
+                var max = -1,
+                    idx = -1;
+                for (var i = 0; i < li.length; i++)
+                    if (li[i] > max) {
+                        idx = i;
+                        max = li[i]
+                    }
+                //last layer
+
+                $("test").innerHTML = "";
+                $("test").innerHTML = idx.toString() + "<br>";
+                var out_li = this.ho_w[idx].slice();
+
+                // Update
+                //update input ~ hidden
+                for (var i = 0; i < this.input_t; i++) {
+                    $("test").innerHTML += round(this.ih_w[i][idx]) + " " + round(this.rateh * (in_data[i] - this.ih_w[i][idx]));
+                    this.ih_w[i][idx] += this.rateh * (in_data[i] - this.ih_w[i][idx]);
+                    $("test").innerHTML += " " + round(this.ih_w[i][idx]) + "<br>";
+
+                }
+                var RMS = 0;
+                for (var i = 0; i < this.input_t; i++)
+                    RMS += this.ih_w[i][idx] * this.ih_w[i][idx];
+                RMS = Math.sqrt(RMS);
+                $("test").innerHTML += RMS + "<br>";
+                for (var i = 0; i < this.input_t; i++) {
+                    this.ih_w[i][idx] /= RMS;
+                    $("test").innerHTML += round(this.ih_w[i][idx]) + "<br>";
+                }
+                //update hidden ~ output 
+                for (var i = 0; i < this.output_t; i++)
+                    this.ho_w[idx][i] += this.rateo * (tar_data[i] - out_li[i]);
+                this.show();
+            },
+
+            guess: function(in_data) {
+                var tmp_w = this.ih_w.slice();
+                for (var i = 0; i < tmp_w.length; i++)
+                    for (var j = 0; j < tmp_w[i].length; j++)
+                        tmp_w[i][j] *= in_data[i];
+
+                var li = new Array(this.hidden_t);
+                for (var i = 0; i < li.length; i++)
+                    li[i] = tmp_w[0][i] + tmp_w[1][i] + tmp_w[2][i];
+
+                var max = -1,
+                    idx = -1;
+                for (var i = 0; i < li.length; i++)
+                    if (li[i] > max) {
+                        idx = i;
+                        max = li[i]
+                    }
+                //last layer
+                var out_li = this.ho_w[idx].slice();
+                //                for (var i = 0; i < out_li.length; i++)
+                //                    $("test").innerHTML += out_li[i] + " ";
+
+                var ans = -1,
+                    m = -1;
+                for (var i = 0; i < li.length; i++)
+                    if (out_li[i] > max) {
+                        ans = i;
+                        m = out_li[i];
+                    }
+                return ans;
+            }
+        });
+
+        var in_data = [1, 2, 3];
+        var tar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        var NN = new CPN(3, 16, 10, 0.5, 0.5);
+        NN.random_w();
+        NN.run(in_data, tar);
+
+    </script>
+</body>
+
+</html>

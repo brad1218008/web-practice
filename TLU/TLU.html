@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var lastx = 35;
+        var lasty = 70;
+        var times = 0;
+        var currentclass = 0;
+
+        var locx;
+        var locy;
+        var locc;
+        var point = [];
+        var w1 = 2;
+        var w2 = -2;
+        var t = 50.5;
+        var rate = 0.007;
+        var tox;
+        var toy;
+        var redraw = false;
+
+        function draw() {
+            var canvas = document.getElementById("canvas");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+
+
+                ctx.strokeRect(0, 0, 700, 700);
+
+                ctx.beginPath();
+                ctx.moveTo(350, 0);
+                ctx.lineTo(350, 700);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, 350);
+                ctx.lineTo(700, 350);
+                ctx.stroke();
+            }
+        }
+
+        function drawline() {
+            var canvas = document.getElementById("canvas");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+                var move = false;
+                ctx.beginPath();
+                if (((t - ((-350) * w1)) / w2 <= 350) && ((t - ((-350) * w1)) / w2 >= (-350))) {
+                    tox = -350;
+                    toy = (t - ((-350) * w1)) / w2;
+                    if (!move) {
+                        ctx.moveTo(tox + 350, -toy + 350);
+                        //document.getElementById("test").innerHTML += tox + " " + toy + "<br>";
+                        move = true;
+                    }
+                }
+                if (((t - (350 * w2)) / w1 < 350) && ((t - (350 * w2)) / w1 > (-350))) {
+                    toy = 350;
+                    tox = (t - (350 * w2)) / w1;
+                    if (!move) {
+                        ctx.moveTo(tox + 350, -toy + 350);
+                        //document.getElementById("test").innerHTML += tox + " " + toy + "<br>";
+                        move = true;
+                    }
+                }
+                if (((t - (350 * w1)) / w2 <= 350) && ((t - (350 * w1)) / w2 >= (-350))) {
+                    tox = 350;
+                    toy = (t - (350 * w1)) / w2;
+                    if (!move) {
+                        ctx.moveTo(tox + 350, -toy + 350);
+                        //document.getElementById("test").innerHTML += tox + " " + toy + "<br>";
+                        move = true;
+                    }
+                } 
+                if (((t - ((-350) * w2)) / w1 < 350) && ((t - ((-350) * w2)) / w1 > (-350))){
+                    toy = -350;
+                    tox = (t - ((-350) * w2)) / w1;
+                }
+
+                //document.getElementById("test").innerHTML += tox + " " + toy + "<br>";
+                
+                ctx.lineTo(tox + 350, -toy + 350);
+                ctx.stroke();
+                redraw = true;
+            }
+        }
+
+        $(document).ready(function() {
+            $("#canvas").click(function(e) {
+                getPosition(e);
+            });
+        });
+
+        var pointSize = 3;
+
+        function getPosition(event) {
+            var rect = canvas.getBoundingClientRect();
+            var x = event.clientX - rect.left;
+            var y = event.clientY - rect.top;
+            //alert("( " + lastx + "," + lasty + ")");
+            lastx = x;
+            lasty = y;
+            var obp = new myPoint(x - 350, -y + 350, currentclass);
+            point.push(obp);
+            if(currentclass) {
+                document.getElementById("cla2").innerHTML += "( " + (x-350) + " , " + (-y+350)+ " ) " + "\n";
+            }
+            else {
+                document.getElementById("cla1").innerHTML += "( " + (x-350) + " , " + (-y+350)+ " ) " + "\n";
+            }
+            
+            drawCoordinates(x, y, currentclass);
+        }
+
+        function drawCoordinates(x, y, c) {
+            var ctx = document.getElementById("canvas").getContext("2d");
+
+            if (!c)
+                ctx.fillStyle = "#ff2626";
+            else
+                ctx.fillStyle = "#2626ff";
+
+            ctx.beginPath();
+            ctx.arc(x, y, pointSize, 0, Math.PI * 2, true);
+            ctx.fill();
+        }
+
+        function cto0() {
+            currentclass = 0;
+            $('#class1').addClass('pre1');
+            $('#class2').removeClass('pre2')
+        }
+
+        function cto1() {
+            currentclass = 1;
+            $('#class1').removeClass('pre1');
+            $('#class2').addClass('pre2')
+        }
+
+        function myPoint(posx, posy, cla) {
+            this.posx = posx;
+            this.posy = posy;
+            this.cla = cla;
+        }
+
+        function TLU() {
+            var done = 0;
+            var position = 0;
+            var newpos = 0;
+            while (done != point.length) {
+                var sum = point[position].posx * w1 + point[position].posy * w2;
+                if ((sum >= t) && (point[position].cla == 0)) {
+                    w1 = w1 + (rate * (-1) * point[position].posx);
+                    w2 = w2 + (rate * (-1) * point[position].posy);
+                    done = 0;
+                    do {
+                        newpos = Math.floor(Math.random() * point.length);
+                    } while (newpos == position);
+                    position = newpos;
+                    times++;
+                    //document.getElementById("test").innerHTML += "do0<br>";
+                } else if ((sum < t) && (point[position].cla == 1)) {
+                    w1 = w1 + (rate * point[position].posx);
+                    w2 = w2 + (rate * point[position].posy);
+                    done = 0;
+                    do {
+                        newpos = Math.floor(Math.random() * point.length);
+                    } while (newpos == position);
+                    position = newpos;
+                    times++;
+                    //document.getElementById("test").innerHTML += "do1<br>";
+                } else {
+                    done++;
+                    //document.getElementById("test").innerHTML += "nodo "+sum+" "+position+"  "+point[position].cla+"<br>";
+                    if (position == (point.length - 1)) {
+                        position = 0;
+                    } else {
+                        position++;
+                    }
+                    times++;
+                }
+                if (times % (point.length * 50) == 0) {
+                    t = Math.floor((Math.random() * 280) * 5) - 699.5;
+                    //alert("timesup change threshhold : " + t);
+                    w1 = 2;
+                    w2 = -2;
+                    done = 0;
+                }
+                
+            }
+            if( w2>0 ) {
+                document.getElementById("res").innerHTML = Math.round(w1*1000)/1000 + "x+" + Math.round(w2*1000)/1000 + "y=" + t ;
+            }
+            else {
+                document.getElementById("res").innerHTML = Math.round(w1*1000)/1000 + "x" + Math.round(w2*1000)/1000 + "y=" + t ;
+            }
+            
+            if(redraw) {
+                clear();
+            }
+            if(times > (point.length*5000))
+            {
+                alert("Fail to train");
+                clear();
+                return 0;
+            }
+            drawline();
+        }
+        function clear() {
+            var canvas = document.getElementById("canvas");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+
+
+                ctx.clearRect(0, 0, 700, 700);
+                ctx.strokeRect(0, 0, 700, 700);
+
+                ctx.beginPath();
+                ctx.moveTo(350, 0);
+                ctx.lineTo(350, 700);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, 350);
+                ctx.lineTo(700, 350);
+                ctx.stroke();
+                
+            }
+            for(var i=0 ; i<point.length ; i++) {
+                drawCoordinates(point[i].posx+350, -point[i].posy+350, point[i].cla);
+            }
+        }
+        function reload() {
+            location.reload();
+        }
+    </script>
+    <style>
+        .herder {
+            height: 100px;
+        }
+        h1 {
+            font-size: 60px;
+        }
+        .main {
+            height: 700px;
+            width: 100$;
+        }
+        .pic {
+            height: 700px;
+            width: 700px;
+            float: left;
+        }
+        .text {
+            width: 300px;
+            height: 700px;
+            float: left;
+            margin-left: 40px;
+        }
+        #class1, #class2 {
+            font-size: 23px;
+            width: 130px;
+        }
+        .pre1 {
+            background-color: #FF2626;
+            color: white;
+        }
+        .pre2 {
+            background-color: #2626FF;
+            color: white;
+        }
+        #go {
+            font-size: 23px;
+            margin-top: 30px;
+            width: 265px;
+        }
+        #cla1, #cla2 {
+            width: 260px;
+            height: 130px;
+            font-size: 15px;
+        }
+        #res {
+            font-size: 25px;
+            width: 260px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body onload="draw();">
+    <header>
+        <h1>TLU</h1>
+    </header>
+    <div class="main">
+        <div class="pic">
+            <canvas id="canvas" width="700" height="700" style="cursor:crosshair" ;></canvas>
+        </div>
+        <div class="text">
+            <br>
+            <button id="class1" onclick="cto0();" class="pre1" >Class 1</button>
+            <button id="class2" onclick="cto1();">Class 2</button>
+            <button id="go" onclick="TLU();">GO</button><br>
+            <h3>Class1</h3>
+            <textarea id="cla1" readonly></textarea>
+            <h3>Class2</h3>
+            <textarea id="cla2" readonly></textarea>
+            <h3>Result Line</h3>
+            <textarea id="res" readonly></textarea>
+            <button id="go" onclick="reload();"> Reset</button>
+        </div>
+    </div>
+    
+    <br>
+    <!--<p id="demo"></p>
+    <p id="test"></p>-->
+</body>
+
+</html>

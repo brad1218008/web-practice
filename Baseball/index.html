@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>K Baseball League--首頁</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#menuTag").on('click', function() {
+                $("nav").toggleClass("menu-show");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="titleLogo">
+            <a href="index.html"><img src="source/Logo(land).png" alt="Smiley face" height="55" width="160"></a>
+        </div>
+        <nav class="choose">
+            <ui class="menu">
+                <a href="#">
+                    <li>首頁</li>
+                </a>
+                <a href="sch.html">
+                    <li>賽程</li>
+                </a>
+                <a href="standing.html">
+                    <li>戰績</li>
+                </a>
+                <a href="record.html">
+                    <li>參賽國家</li>
+                </a>
+            </ui>
+            <a id="menuTag">MENU</a>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="mainarea">
+            <nav class="area">
+                <div class="card">
+                    <h1>今日對戰</h1><br>
+                    <h2>11/28 (二) 18:30</h2><br>
+                    <img id="flag" src="source/taiwan.png" width="100px"> &nbsp&nbsp<img src="source/vs.png" width="65px">&nbsp&nbsp
+                    <img id="flag" src="source/japan.png" width="100px">
+                    <h3>台灣&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp日本</h3>
+                    <h2>場地：東京巨蛋</h2>
+                </div>
+                <div class="card">
+                    <h1 class="place">明日對戰</h1><br>
+                    <h2>11/29 (三) 18:30</h2><br>
+                    <img id="flag" src="source/korea.png" width="100px"> &nbsp&nbsp<img src="source/vs.png" width="65px">&nbsp&nbsp
+                    <img id="flag" src="source/taiwan.png" width="100px">
+                    <h3>韓國&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp台灣</h3>
+                    <h2>場地：東京巨蛋</h2>
+                </div>
+            </nav>
+            <h1>VOD</h1>
+            <div class="movie">
+               <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r3UKy95eEmY?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="footer">
+            Copyright ©2017 K Baseball League.
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>K Baseball League--個人成績</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="record.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#menuTag").on('click', function() {
+                $("nav").toggleClass("menu-show");
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="titleLogo">
+            <a href="index.html"><img src="source/Logo(land).png" alt="Smiley face" height="55" width="160"></a>
+        </div>
+        <nav class="choose">
+            <ui class="menu">
+                <a href="index.html">
+                    <li>首頁</li>
+                </a>
+                <a href="sch.html">
+                    <li>賽程</li>
+                </a>
+                <a href="standing.html">
+                    <li>戰績</li>
+                </a>
+                <a href="#">
+                    <li>參賽國家</li>
+                </a>
+            </ui>
+            <a id="menuTag">MENU</a>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="mainarea">
+            <nav class="area1">
+                <div class="card1">
+                    <img src="source/taiwan.png" width="250" height="180">
+                    <h1>Taiwan</h1><br>
+                    <h1>台灣</h1>
+                </div>
+                <div class="card1">
+                    <img src="source/Australia.png" width="250" height="180">
+                    <h1>Australia</h1><br>
+                    <h1>澳洲</h1>
+                </div>
+                <div class="card1">
+                    <img src="source/japan.png" width="250" height="180">
+                    <h1>Japan</h1><br>
+                    <h1>日本</h1>
+                </div>
+                <div class="card1">
+                    <img src="source/korea.png" width="250" height="180">
+                    <h1>Korea</h1><br>
+                    <h1>韓國</h1>
+                </div>
+                <div class="card1">
+                    <img src="source/china.png" width="250" height="180">
+                    <h1>China</h1><br>
+                    <h1>中國</h1>
+                </div>
+            </nav>
+        </div>
+        <div class="footer">
+ Copyright ©2017 K Baseball League.
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>T.C.Kuo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script type="text/javascript" src="myscript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#menuTag").on('click', function() {
+                $("nav").toggleClass("menu-show");
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="titleLogo">
+                <a href="index.html"><img src="source/Logo(land).png" alt="Smiley face" height="75" width="180"></a>
+            </div>
+            <nav class="choose">
+                <ui class="menu">
+                    <a href="about.html">
+                        <li >ABOUT ME</li>
+                    </a>
+                    <a href="design.html">
+                        <li>MY DESIGN</li>
+                    </a>
+                    <a href="pet.html">
+                        <li>MY PET</li>
+                    </a>
+                    <a href="movie.html">
+                        <li>MY MOVIE</li>
+                    </a>
+                </ui>
+                <a id="menuTag">MENU</a>
+            </nav>
+        </div>
+        <div class="profile">
+            <div class="about">
+                <h1>About Me</h1><br>
+                <img id="selfie" src="source/se.png" height="470" width="auto">
+                <y><br>My name is <strong>T.C.Kuo</strong>.<br> I was born in 1998.<br> I'm a freshman in<br> Tamkang University,<br> Department of Architecture.<br>My favorite food is<br> Matcha.<br>In spare time,<br>I love to play Badminton<br> and volleyball with<br> my best friends.</y>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

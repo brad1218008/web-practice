@@ -1,0 +1,5 @@
+<a href="<%= carts_path %>" >
+  <button  class="btn btn-outline-success my-2 my-sm-0 " style="margin-left:10px" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="<%= "#{current_user.order_items.count} #{current_user.order_items.count>1 ? "items" : "item"} $#{current_user.subtotal.to_i} " %>">
+    <img src="../assets/cart_icon.png" width="20px">
+  </button>
+</a>
